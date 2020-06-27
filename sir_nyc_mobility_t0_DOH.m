@@ -34,8 +34,9 @@ appleData = readtable(appeDataFName,opts);
 % special case of two missing columns 126 and 127 - set value to 125
 appleData{:,126} = appleData{:,125};
 appleData{:,127} = appleData{:,125};
-nycindx = find(strcmp(appleData.Var2,'New York City') & ...
-    strcmp(appleData.Var3,'transit') );
+% nycindx = find(strcmp(appleData.Var2,'New York City') & ...
+%     strcmp(appleData.Var3,'transit') );
+nycindx = find(strcmp(appleData.Var2,'New York City') );
 appleDates = ( datetime('Jan/13/2020'):...
     datetime('Jan/13/2020')+days(size(appleData,2)-6) )';
 appleDates = [ (datetime('Jan/1/2020') + days(0:11))' ; appleDates];
